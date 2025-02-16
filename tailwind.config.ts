@@ -1,8 +1,8 @@
+import catppuccin from "@catppuccin/tailwindcss";
 import forms from "@tailwindcss/forms";
 import typography from "@tailwindcss/typography";
-import catppuccin from "@catppuccin/tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 const accent = "text";
 const linkColor = "mauve";

@@ -1,7 +1,7 @@
 <script lang="ts">
-import type { ComponentProps } from "svelte";
-import { Button } from "bits-ui";
 import { cn } from "$lib/util";
+import { Button } from "bits-ui";
+import type { ComponentProps } from "svelte";
 
 type Props = ComponentProps<typeof Button.Root>;
 

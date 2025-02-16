@@ -1,8 +1,8 @@
 <script lang="ts">
-import ImageUp from "lucide-svelte/icons/image-up";
 import { setImageUploaded } from "$lib/state.svelte";
-import { toast } from "svelte-sonner";
+import ImageUp from "lucide-svelte/icons/image-up";
 import { onMount } from "svelte";
+import { toast } from "svelte-sonner";
 
 let fileInput: HTMLInputElement;
 let isDraggingFile = false;

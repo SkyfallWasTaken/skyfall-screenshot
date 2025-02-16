@@ -1,8 +1,8 @@
 <script lang="ts">
-import Slider from "./slider.svelte";
-import Button from "./button.svelte";
-import * as htmlToImage from "html-to-image";
 import { appState } from "$lib/state.svelte";
+import * as htmlToImage from "html-to-image";
+import Button from "./button.svelte";
+import Slider from "./slider.svelte";
 
 function downloadImage() {
 	if (appState.variant !== "imageUploaded" || !appState.designerElement) return;

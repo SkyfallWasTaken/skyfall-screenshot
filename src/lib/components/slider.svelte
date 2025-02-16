@@ -1,6 +1,6 @@
 <script lang="ts">
-import type { ComponentProps } from "svelte";
 import { Slider, type WithoutChildren } from "bits-ui";
+import type { ComponentProps } from "svelte";
 
 type Props = WithoutChildren<ComponentProps<typeof Slider.Root>>;
 
