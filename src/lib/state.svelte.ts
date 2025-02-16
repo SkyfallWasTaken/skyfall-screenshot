@@ -15,15 +15,15 @@ interface ImageUploadedState {
 }
 
 interface NoUploadState {
-  variant: "notUploaded";
+	variant: "notUploaded";
 }
 
 interface ImageUploadedState {
-  variant: "imageUploaded";
-  imageFile: File;
-  margin: number;
-  borderRadius: number;
-  designerElement?: HTMLDivElement;
+	variant: "imageUploaded";
+	imageFile: File;
+	margin: number;
+	borderRadius: number;
+	designerElement?: HTMLDivElement;
 }
 
 type State = NoUploadState | ImageUploadedState;
@@ -38,4 +38,4 @@ export function setImageUploaded(file: File) {
 	(appState as ImageUploadedState).borderRadius = 12;
 	(appState as ImageUploadedState).designerElement = undefined;
 	appState.variant = "imageUploaded";
-});
+}
