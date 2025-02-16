@@ -18,6 +18,7 @@
     "@sveltejs/adapter-auto": "^4.0.0",
     "@sveltejs/kit": "^2.16.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@types/dropzone": "^5.7.9",
     "autoprefixer": "^10.4.20",
     "svelte": "^5.19.6",
     "svelte-check": "^4.1.4",
