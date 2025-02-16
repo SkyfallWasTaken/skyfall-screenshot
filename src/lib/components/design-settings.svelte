@@ -25,14 +25,14 @@
 {#if appState.variant == "imageUploaded"}
   <div class="flex flex-col h-full">
     <div class="p-6 space-y-8">
-      <div class="w-full space-y-2">
+      <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
           <span class="font-semibold">Margin</span>
           <span class="text-text/80 font-medium">{appState.margin}px</span>
         </div>
         <Slider bind:value={appState.margin} max={32} type="single" />
       </div>
-      <div class="w-full space-y-2">
+      <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
           <span class="font-semibold">Border Radius</span>
           <span class="text-text/80 font-medium">{appState.borderRadius}px</span
