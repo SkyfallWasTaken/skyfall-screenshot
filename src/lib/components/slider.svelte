@@ -1,14 +1,14 @@
 <script lang="ts">
-import { Slider, type WithoutChildren } from "bits-ui";
-import type { ComponentProps } from "svelte";
+  import { Slider, type WithoutChildren } from "bits-ui";
+  import type { ComponentProps } from "svelte";
 
-type Props = WithoutChildren<ComponentProps<typeof Slider.Root>>;
+  type Props = WithoutChildren<ComponentProps<typeof Slider.Root>>;
 
-let {
-	value = $bindable(),
-	ref = $bindable(null),
-	...restProps
-}: Props = $props();
+  let {
+    value = $bindable(),
+    ref = $bindable(null),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="w-full md:max-w-[280px]">
@@ -25,9 +25,9 @@ let {
   >
     {#snippet children({ thumbs })}
       <span
-        class="bg-mantle relative h-2 w-full grow cursor-pointer overflow-hidden rounded-full"
+        class="bg-surface0 relative h-2 w-full grow cursor-pointer overflow-hidden rounded-full"
       >
-        <Slider.Range class="bg-mantle absolute h-full" />
+        <Slider.Range class="bg-surface0 absolute h-full" />
       </span>
       {#each thumbs as index}
         <Slider.Thumb
