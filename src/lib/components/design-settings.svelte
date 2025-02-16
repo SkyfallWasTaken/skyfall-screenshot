@@ -2,7 +2,7 @@
   import Slider from "./slider.svelte";
   import Button from "./button.svelte";
   import * as htmlToImage from "html-to-image";
-  import { state as appState } from "$lib/state.svelte";
+  import { appState } from "$lib/state.svelte";
 
   function downloadImage() {
     if (appState.variant !== "imageUploaded" || !appState.designerElement)

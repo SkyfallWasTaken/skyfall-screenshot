@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { state as appState } from "$lib/state.svelte";
+  import { appState } from "$lib/state.svelte";
 </script>
 
 {#if appState.variant == "imageUploaded"}

@@ -1,12 +1,12 @@
-export interface BaseState {
+interface BaseState {
   variant: string;
 }
 
-export interface NoUploadState {
+interface NoUploadState {
   variant: "notUploaded";
 }
 
-export interface ImageUploadedState {
+interface ImageUploadedState {
   variant: "imageUploaded";
   imageFile: File;
   margin: number;
@@ -14,16 +14,16 @@ export interface ImageUploadedState {
   designerElement?: HTMLDivElement;
 }
 
-export type State = NoUploadState | ImageUploadedState;
+type State = NoUploadState | ImageUploadedState;
 
-export const state: State = $state({
+export const appState: State = $state({
   variant: "notUploaded",
 });
 
 export function setImageUploaded(file: File) {
-  (state as ImageUploadedState).imageFile = file;
-  (state as ImageUploadedState).margin = 12;
-  (state as ImageUploadedState).borderRadius = 12;
-  (state as ImageUploadedState).designerElement = undefined;
-  state.variant = "imageUploaded";
+  (appState as ImageUploadedState).imageFile = file;
+  (appState as ImageUploadedState).margin = 12;
+  (appState as ImageUploadedState).borderRadius = 12;
+  (appState as ImageUploadedState).designerElement = undefined;
+  appState.variant = "imageUploaded";
 }
