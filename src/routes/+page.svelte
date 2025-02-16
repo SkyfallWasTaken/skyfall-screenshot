@@ -24,5 +24,7 @@
     </Pane>
   </PaneGroup>
 {:else}
-  <UploadDropzone on:fileSelected={handleFileSelected} />
+  <div class="flex justify-center items-center h-full">
+    <UploadDropzone on:fileSelected={handleFileSelected} />
+  </div>
 {/if}
