@@ -5,6 +5,7 @@
     type ImageUploadedState,
   } from "$lib/state.svelte";
   import { toast } from "svelte-sonner";
+  import { onMount } from "svelte";
 
   let fileInput: HTMLInputElement;
   let isDraggingFile = false;
@@ -12,6 +13,24 @@
   function onImageUpload(file: File) {
     (appState as ImageUploadedState).imageFile = file;
     appState.variant = "imageUploaded";
+  }
+
+  function handlePaste(event: ClipboardEvent) {
+    const items = event.clipboardData?.items;
+    if (!items) return;
+
+    for (const item of items) {
+      if (item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (file) {
+          event.preventDefault();
+          onImageUpload(file);
+          return;
+        }
+      } else {
+        toast.error("File must be an image.");
+      }
+    }
   }
 
   function onClick() {
@@ -63,6 +82,11 @@
       isDraggingFile = false;
     }
   }
+
+  onMount(() => {
+    document.addEventListener("paste", handlePaste);
+    return () => document.removeEventListener("paste", handlePaste);
+  });
 </script>
 
 <input
