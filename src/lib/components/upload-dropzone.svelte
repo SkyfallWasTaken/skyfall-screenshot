@@ -1,10 +1,12 @@
 <script lang="ts">
   import ImageUp from "lucide-svelte/icons/image-up";
   import { state as appState } from "$lib/state.svelte";
+  import type { ImageUploadedState } from "$lib/state.svelte";
 
   let fileInput: HTMLInputElement;
 
-  function onImageUpload() {
+  function onImageUpload(file: File) {
+    (appState as ImageUploadedState).imageFile = file;
     appState.variant = "imageUploaded";
   }
 
@@ -16,7 +18,7 @@
     const files = (event.target as HTMLInputElement).files;
     if (files && files.length > 0) {
       const file = files[0];
-      onImageUpload();
+      onImageUpload(file);
     }
   }
 
@@ -25,7 +27,7 @@
     if (event.dataTransfer?.files) {
       const file = event.dataTransfer.files[0];
       if (file?.type.startsWith("image/")) {
-        onImageUpload();
+        onImageUpload(file);
       }
     }
   }
