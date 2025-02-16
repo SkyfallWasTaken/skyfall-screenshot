@@ -1,19 +1,11 @@
 <script lang="ts">
   import ImageUp from "lucide-svelte/icons/image-up";
-  import {
-    state as appState,
-    type ImageUploadedState,
-  } from "$lib/state.svelte";
+  import { setImageUploaded } from "$lib/state.svelte";
   import { toast } from "svelte-sonner";
   import { onMount } from "svelte";
 
   let fileInput: HTMLInputElement;
   let isDraggingFile = false;
-
-  function onImageUpload(file: File) {
-    (appState as ImageUploadedState).imageFile = file;
-    appState.variant = "imageUploaded";
-  }
 
   function handlePaste(event: ClipboardEvent) {
     const items = event.clipboardData?.items;
@@ -24,11 +16,12 @@
         const file = item.getAsFile();
         if (file) {
           event.preventDefault();
-          onImageUpload(file);
+          setImageUploaded(file);
           return;
         }
       } else {
         toast.error("File must be an image.");
+        return;
       }
     }
   }
@@ -41,7 +34,7 @@
     const files = (event.target as HTMLInputElement).files;
     if (files && files.length > 0) {
       const file = files[0];
-      onImageUpload(file);
+      setImageUploaded(file);
     }
   }
 
@@ -51,7 +44,7 @@
     if (event.dataTransfer?.files) {
       const file = event.dataTransfer.files[0];
       if (file?.type.startsWith("image/")) {
-        onImageUpload(file);
+        setImageUploaded(file);
       } else {
         toast.error("File must be an image.");
       }
