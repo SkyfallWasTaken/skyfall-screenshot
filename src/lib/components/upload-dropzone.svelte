@@ -1,85 +1,80 @@
 <script lang="ts">
-  import ImageUp from "lucide-svelte/icons/image-up";
-  import { setImageUploaded } from "$lib/state.svelte";
-  import { toast } from "svelte-sonner";
-  import { onMount } from "svelte";
+import ImageUp from "lucide-svelte/icons/image-up";
+import { setImageUploaded } from "$lib/state.svelte";
+import { toast } from "svelte-sonner";
+import { onMount } from "svelte";
 
-  let fileInput: HTMLInputElement;
-  let isDraggingFile = false;
+let fileInput: HTMLInputElement;
+let isDraggingFile = false;
 
-  function handlePaste(event: ClipboardEvent) {
-    const items = event.clipboardData?.items;
-    if (!items) return;
+function handlePaste(event: ClipboardEvent) {
+	const items = event.clipboardData?.items;
+	if (!items) return;
 
-    for (const item of items) {
-      if (item.type.startsWith("image/")) {
-        const file = item.getAsFile();
-        if (file) {
-          event.preventDefault();
-          setImageUploaded(file);
-          return;
-        }
-      } else {
-        toast.error("File must be an image.");
-        return;
-      }
-    }
-  }
+	for (const item of items) {
+		if (item.type.startsWith("image/")) {
+			const file = item.getAsFile();
+			if (file) {
+				event.preventDefault();
+				setImageUploaded(file);
+				return;
+			}
+		} else {
+			toast.error("File must be an image.");
+			return;
+		}
+	}
+}
 
-  function onClick() {
-    fileInput.click();
-  }
+function onClick() {
+	fileInput.click();
+}
 
-  function onFileSelect(event: Event) {
-    const files = (event.target as HTMLInputElement).files;
-    if (files && files.length > 0) {
-      const file = files[0];
-      setImageUploaded(file);
-    }
-  }
+function onFileSelect(event: Event) {
+	const files = (event.target as HTMLInputElement).files;
+	if (files && files.length > 0) {
+		const file = files[0];
+		setImageUploaded(file);
+	}
+}
 
-  function onDrop(event: DragEvent) {
-    event.preventDefault();
-    isDraggingFile = false;
-    if (event.dataTransfer?.files) {
-      const file = event.dataTransfer.files[0];
-      if (file?.type.startsWith("image/")) {
-        setImageUploaded(file);
-      } else {
-        toast.error("File must be an image.");
-      }
-    }
-  }
+function onDrop(event: DragEvent) {
+	event.preventDefault();
+	isDraggingFile = false;
+	if (event.dataTransfer?.files) {
+		const file = event.dataTransfer.files[0];
+		if (file?.type.startsWith("image/")) {
+			setImageUploaded(file);
+		} else {
+			toast.error("File must be an image.");
+		}
+	}
+}
 
-  function onDragOver(event: DragEvent) {
-    event.preventDefault();
-    isDraggingFile = true;
-    if (event.dataTransfer) {
-      event.dataTransfer.dropEffect = "copy";
-    }
-  }
+function onDragOver(event: DragEvent) {
+	event.preventDefault();
+	isDraggingFile = true;
+	if (event.dataTransfer) {
+		event.dataTransfer.dropEffect = "copy";
+	}
+}
 
-  function onDragLeave(event: DragEvent) {
-    // Check if we're leaving the dropzone and not just entering a child element
-    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
-    const x = event.clientX;
-    const y = event.clientY;
+function onDragLeave(event: DragEvent) {
+	// Check if we're leaving the dropzone and not just entering a child element
+	const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+	const x = event.clientX;
+	const y = event.clientY;
 
-    // If the cursor is outside the dropzone bounds, we've actually left
-    if (
-      x <= rect.left ||
-      x >= rect.right ||
-      y <= rect.top ||
-      y >= rect.bottom
-    ) {
-      isDraggingFile = false;
-    }
-  }
+	// If the cursor is outside the dropzone bounds, we've actually left
+	if (x <= rect.left || x >= rect.right || y <= rect.top || y >= rect.bottom) {
+		isDraggingFile = false;
+	}
+}
 
-  onMount(() => {
-    document.addEventListener("paste", handlePaste);
-    return () => document.removeEventListener("paste", handlePaste);
-  });
+onMount(() => {
+	document.addEventListener("paste", handlePaste);
+	return () => document.removeEventListener("paste", handlePaste);
+});
 </script>
 
 <input

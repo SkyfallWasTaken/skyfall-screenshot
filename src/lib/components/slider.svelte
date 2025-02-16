@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { ComponentProps } from "svelte";
-  import { Slider, type WithoutChildren } from "bits-ui";
+import type { ComponentProps } from "svelte";
+import { Slider, type WithoutChildren } from "bits-ui";
 
-  type Props = WithoutChildren<ComponentProps<typeof Slider.Root>>;
+type Props = WithoutChildren<ComponentProps<typeof Slider.Root>>;
 
-  let {
-    value = $bindable(),
-    ref = $bindable(null),
-    ...restProps
-  }: Props = $props();
+let {
+	value = $bindable(),
+	ref = $bindable(null),
+	...restProps
+}: Props = $props();
 </script>
 
 <div class="w-full md:max-w-[280px]">

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { PaneGroup, Pane, PaneResizer } from "paneforge";
-  import { appState } from "$lib/state.svelte";
-  import UploadDropzone from "$lib/components/upload-dropzone.svelte";
-  import Designer from "$lib/components/designer.svelte";
-  import DesignSettings from "$lib/components/design-settings.svelte";
+import { PaneGroup, Pane, PaneResizer } from "paneforge";
+import { appState } from "$lib/state.svelte";
+import UploadDropzone from "$lib/components/upload-dropzone.svelte";
+import Designer from "$lib/components/designer.svelte";
+import DesignSettings from "$lib/components/design-settings.svelte";
 </script>
 
 {#if appState.variant == "imageUploaded"}

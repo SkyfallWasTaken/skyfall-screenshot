@@ -1,25 +1,24 @@
 <script lang="ts">
-  import Slider from "./slider.svelte";
-  import Button from "./button.svelte";
-  import * as htmlToImage from "html-to-image";
-  import { appState } from "$lib/state.svelte";
+import Slider from "./slider.svelte";
+import Button from "./button.svelte";
+import * as htmlToImage from "html-to-image";
+import { appState } from "$lib/state.svelte";
 
-  function downloadImage() {
-    if (appState.variant !== "imageUploaded" || !appState.designerElement)
-      return;
+function downloadImage() {
+	if (appState.variant !== "imageUploaded" || !appState.designerElement) return;
 
-    htmlToImage
-      .toPng(appState.designerElement)
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = "skyfall-screenshot.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((error) => {
-        console.error("Oops, something went wrong!", error);
-      });
-  }
+	htmlToImage
+		.toPng(appState.designerElement)
+		.then((dataUrl) => {
+			const link = document.createElement("a");
+			link.download = "skyfall-screenshot.png";
+			link.href = dataUrl;
+			link.click();
+		})
+		.catch((error) => {
+			console.error("Oops, something went wrong!", error);
+		});
+}
 </script>
 
 {#if appState.variant == "imageUploaded"}

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import "../app.css";
-  import "@fontsource-variable/inter";
-  import { Toaster } from "svelte-sonner";
-  let { children } = $props();
+import "../app.css";
+import "@fontsource-variable/inter";
+import { Toaster } from "svelte-sonner";
+let { children } = $props();
 </script>
 
 <Toaster theme="dark" />

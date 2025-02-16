@@ -1,16 +1,16 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    @apply bg-base text-text;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	@apply bg-base text-text;
 }
 
 .scrollbar {
-    @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-surface0 [&::-webkit-scrollbar-thumb]:rounded-full;
+	@apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-surface0 [&::-webkit-scrollbar-thumb]:rounded-full;
 }
