@@ -26,4 +26,4 @@ export function setImageUploaded(file: File) {
 	(appState as ImageUploadedState).borderRadius = 12;
 	(appState as ImageUploadedState).designerElement = undefined;
 	appState.variant = "imageUploaded";
-}
+});
