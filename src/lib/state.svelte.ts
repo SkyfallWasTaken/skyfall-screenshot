@@ -14,6 +14,18 @@ interface ImageUploadedState {
 	designerElement?: HTMLDivElement;
 }
 
+interface NoUploadState {
+  variant: "notUploaded";
+}
+
+interface ImageUploadedState {
+  variant: "imageUploaded";
+  imageFile: File;
+  margin: number;
+  borderRadius: number;
+  designerElement?: HTMLDivElement;
+}
+
 type State = NoUploadState | ImageUploadedState;
 
 export const appState: State = $state({
