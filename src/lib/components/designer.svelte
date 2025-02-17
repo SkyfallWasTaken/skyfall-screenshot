@@ -5,8 +5,11 @@ import Button from "./button.svelte";
 </script>
 
 {#if appState.variant == "imageUploaded"}
-  <div class="flex justify-between items-center p-3">
-    <Button onclick={() => (appState.variant = "notUploaded")}>
+  <div class="flex transition justify-between items-center p-3">
+    <Button
+      class="hover:text-mauve"
+      onclick={() => (appState.variant = "notUploaded")}
+    >
       <ArrowLeft class="mr-2" />
       Back
     </Button>

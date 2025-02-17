@@ -102,7 +102,7 @@ onMount(() => {
     <ImageUp size={32} />
   </div>
   <h2 class="text-2xl font-bold mb-0.5">
-    {isDraggingFile ? "Upload file to Skyfall Screenshot" : "Upload a file"}
+    {isDraggingFile ? "Upload file to Skyedit" : "Upload a file"}
   </h2>
   <p class="text-lg">
     or click here to upload a file or copy and paste an image
