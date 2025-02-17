@@ -26,16 +26,19 @@ interface ImageUploadedState {
 	designerElement?: HTMLDivElement;
 }
 
-type State = NoUploadState | ImageUploadedState;
+type State = BaseState & (NoUploadState | ImageUploadedState);
 
 export const appState: State = $state({
 	variant: "notUploaded",
 });
 
 export function setImageUploaded(file: File) {
-	(appState as ImageUploadedState).imageFile = file;
-	(appState as ImageUploadedState).margin = 12;
-	(appState as ImageUploadedState).borderRadius = 12;
-	(appState as ImageUploadedState).designerElement = undefined;
-	appState.variant = "imageUploaded";
+	const newState: ImageUploadedState = {
+		imageFile: file,
+		margin: 12,
+		borderRadius: 12,
+		designerElement: undefined,
+		variant: "imageUploaded",
+	};
+	Object.assign(appState, newState);
 }
