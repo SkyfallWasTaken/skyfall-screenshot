@@ -14,3 +14,8 @@ body {
 .scrollbar {
 	@apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-surface0 [&::-webkit-scrollbar-thumb]:rounded-full;
 }
+
+/* Used in the designer */
+input[type="color"] {
+	@apply h-8 w-full bg-transparent border-transparent rounded-full cursor-pointer font-sans;
+}

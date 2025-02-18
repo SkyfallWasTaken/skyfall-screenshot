@@ -1,19 +1,19 @@
 <script lang="ts">
-import { appState, type ImageUploadedState } from "$lib/state.svelte";
-import Button from "./button.svelte";
-import Slider from "./slider.svelte";
-import { wallpaperCount } from "$lib/util";
-import { downloadImage, copyToClipboard } from "$lib/designer";
+  import { appState, type ImageUploadedState } from "$lib/state.svelte";
+  import Button from "./button.svelte";
+  import Slider from "./slider.svelte";
+  import { wallpaperCount } from "$lib/util";
+  import { downloadImage, copyToClipboard } from "$lib/designer";
 
-let fileInput: HTMLInputElement | undefined = $state();
+  let fileInput: HTMLInputElement | undefined = $state();
 
-function onFileSelect(event: Event) {
-	if (appState.variant !== "imageUploaded") return;
-	const target = event.target as HTMLInputElement;
-	if (!target.files?.length) return;
-	const file = target.files[0];
-	appState.wallpaperSelected = URL.createObjectURL(file);
-}
+  function onFileSelect(event: Event) {
+    if (appState.variant !== "imageUploaded") return;
+    const target = event.target as HTMLInputElement;
+    if (!target.files?.length) return;
+    const file = target.files[0];
+    appState.wallpaperSelected = URL.createObjectURL(file);
+  }
 </script>
 
 <input
@@ -38,11 +38,41 @@ function onFileSelect(event: Event) {
 
       <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
-          <span class="font-semibold">Border Radius</span>
-          <span class="text-text/80 font-medium">{appState.borderRadius}px</span
+          <span class="font-semibold">Inset</span>
+          <span class="text-text/80 font-medium">{appState.inset}px</span>
+        </div>
+        <Slider bind:value={appState.inset} max={50} type="single" />
+        <input type="color" bind:value={appState.insetColor} />
+      </div>
+
+      <hr class="border-surface0" />
+
+      <div class="w-full space-y-3">
+        <div class="flex justify-between items-center">
+          <span class="font-semibold">Outer Border Radius</span>
+          <span class="text-text/80 font-medium"
+            >{appState.outerBorderRadius}px</span
           >
         </div>
-        <Slider bind:value={appState.borderRadius} max={50} type="single" />
+        <Slider
+          bind:value={appState.outerBorderRadius}
+          max={50}
+          type="single"
+        />
+      </div>
+
+      <div class="w-full space-y-3">
+        <div class="flex justify-between items-center">
+          <span class="font-semibold">Inner Border Radius</span>
+          <span class="text-text/80 font-medium"
+            >{appState.innerBorderRadius}px</span
+          >
+        </div>
+        <Slider
+          bind:value={appState.innerBorderRadius}
+          max={50}
+          type="single"
+        />
       </div>
 
       <div class="w-full space-y-3">
