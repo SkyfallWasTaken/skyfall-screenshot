@@ -19,14 +19,9 @@ import Button from "./button.svelte";
     bind:this={appState.designerElement}
   >
     <div
-      class="h-full flex items-center justify-center {typeof appState.wallpaperSelected ===
-      'number'
-        ? 'wallpaper' + appState.wallpaperSelected
-        : ''}"
+      class="h-full flex items-center justify-center wallpaper{appState.wallpaperSelected}"
       style="padding: {appState.padding}px; {typeof appState.wallpaperSelected ===
-      'string'
-        ? `background-image: url('${appState.wallpaperSelected}')`
-        : ''}"
+        'string' && `background-image: url('${appState.wallpaperSelected}')`}"
     >
       <img
         src={URL.createObjectURL(appState.imageFile)}
