@@ -15,15 +15,24 @@ import Button from "./button.svelte";
     </Button>
   </div>
   <div
+    class="h-[60%] w-full flex justify-center items-center"
     bind:this={appState.designerElement}
-    class="flex justify-center items-center h-full"
   >
-    <div class="w-[512px] overflow-hidden">
+    <div
+      class="h-full flex items-center justify-center {typeof appState.wallpaperSelected ===
+      'number'
+        ? 'wallpaper' + appState.wallpaperSelected
+        : ''}"
+      style="padding: {appState.padding}px; {typeof appState.wallpaperSelected ===
+      'string'
+        ? `background-image: url('${appState.wallpaperSelected}')`
+        : ''}"
+    >
       <img
         src={URL.createObjectURL(appState.imageFile)}
         alt="File uploaded"
         style="border-radius: {appState.borderRadius}px;"
-        class="w-full h-full object-cover"
+        class="max-h-full"
       />
     </div>
   </div>

@@ -1,28 +1,31 @@
+import { wallpaperCount, random } from "./util";
+
 interface BaseState {
 	variant: string;
 }
 
-interface NoUploadState {
+export interface NoUploadState {
 	variant: "notUploaded";
 }
 
-interface ImageUploadedState {
+export interface ImageUploadedState {
 	variant: "imageUploaded";
 	imageFile: File;
-	margin: number;
+	padding: number;
 	borderRadius: number;
 	designerElement?: HTMLDivElement;
 }
 
-interface NoUploadState {
+export interface NoUploadState {
 	variant: "notUploaded";
 }
 
-interface ImageUploadedState {
+export interface ImageUploadedState {
 	variant: "imageUploaded";
 	imageFile: File;
-	margin: number;
+	padding: number;
 	borderRadius: number;
+	wallpaperSelected: number | string;
 	designerElement?: HTMLDivElement;
 }
 
@@ -35,8 +38,9 @@ export const appState: State = $state({
 export function setImageUploaded(file: File) {
 	const newState: ImageUploadedState = {
 		imageFile: file,
-		margin: 12,
+		padding: 24,
 		borderRadius: 12,
+		wallpaperSelected: random(wallpaperCount),
 		designerElement: undefined,
 		variant: "imageUploaded",
 	};

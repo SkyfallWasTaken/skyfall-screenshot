@@ -1,0 +1,157 @@
+/* After adding a wallpaper, update the `wallpaperCount` in src/lib/util.ts */
+.wallpaper0 {
+	background-image: linear-gradient(
+		35deg,
+		hsl(240deg 100% 20%) 0%,
+		hsl(281deg 100% 21%) 8%,
+		hsl(304deg 100% 23%) 17%,
+		hsl(319deg 100% 30%) 25%,
+		hsl(329deg 100% 36%) 33%,
+		hsl(336deg 100% 41%) 42%,
+		hsl(346deg 83% 51%) 50%,
+		hsl(3deg 95% 61%) 58%,
+		hsl(17deg 100% 59%) 67%,
+		hsl(30deg 100% 55%) 75%,
+		hsl(40deg 100% 50%) 83%,
+		hsl(48deg 100% 50%) 92%,
+		hsl(55deg 100% 50%) 100%
+	);
+}
+
+.wallpaper1 {
+	background-image: linear-gradient(
+		5deg,
+		hsl(240deg 74% 47%) 0%,
+		hsl(242deg 68% 50%) 8%,
+		hsl(244deg 67% 52%) 17%,
+		hsl(244deg 68% 54%) 25%,
+		hsl(245deg 69% 56%) 33%,
+		hsl(246deg 69% 58%) 42%,
+		hsl(246deg 70% 60%) 50%,
+		hsl(246deg 71% 62%) 58%,
+		hsl(247deg 71% 64%) 67%,
+		hsl(247deg 72% 66%) 75%,
+		hsl(247deg 73% 68%) 83%,
+		hsl(247deg 73% 69%) 92%,
+		hsl(247deg 74% 71%) 100%
+	);
+}
+
+.wallpaper2 {
+	background-image: linear-gradient(
+		90deg,
+		hsl(305deg 100% 35%) 0%,
+		hsl(308deg 100% 38%) 6%,
+		hsl(312deg 100% 42%) 13%,
+		hsl(316deg 100% 45%) 19%,
+		hsl(319deg 100% 49%) 25%,
+		hsl(322deg 100% 52%) 31%,
+		hsl(326deg 100% 56%) 37%,
+		hsl(329deg 100% 59%) 44%,
+		hsl(333deg 100% 63%) 50%,
+		hsl(336deg 100% 66%) 56%,
+		hsl(339deg 100% 69%) 63%,
+		hsl(343deg 100% 73%) 69%,
+		hsl(346deg 100% 76%) 75%,
+		hsl(350deg 100% 80%) 81%,
+		hsl(353deg 100% 83%) 87%,
+		hsl(357deg 100% 87%) 94%,
+		hsl(0deg 100% 90%) 100%
+	);
+}
+
+.wallpaper3 {
+	background-image: linear-gradient(
+		45deg,
+		hsl(315deg 73% 10%) 0%,
+		hsl(320deg 74% 14%) 5%,
+		hsl(326deg 76% 18%) 9%,
+		hsl(332deg 78% 22%) 14%,
+		hsl(337deg 80% 26%) 18%,
+		hsl(343deg 82% 30%) 23%,
+		hsl(349deg 84% 33%) 27%,
+		hsl(354deg 86% 37%) 32%,
+		hsl(0deg 89% 40%) 36%,
+		hsl(6deg 91% 44%) 41%,
+		hsl(11deg 93% 47%) 45%,
+		hsl(17deg 95% 50%) 50%,
+		hsl(20deg 96% 52%) 55%,
+		hsl(23deg 96% 54%) 59%,
+		hsl(26deg 96% 55%) 64%,
+		hsl(29deg 97% 57%) 68%,
+		hsl(32deg 97% 59%) 73%,
+		hsl(35deg 97% 61%) 77%,
+		hsl(38deg 98% 63%) 82%,
+		hsl(41deg 98% 64%) 86%,
+		hsl(44deg 99% 66%) 91%,
+		hsl(47deg 99% 68%) 95%,
+		hsl(50deg 100% 70%) 100%
+	);
+}
+
+.wallpaper4 {
+	background-image: linear-gradient(
+		198deg,
+		hsl(270deg 100% 7%) 0%,
+		hsl(242deg 74% 16%) 17%,
+		hsl(215deg 54% 28%) 33%,
+		hsl(187deg 38% 41%) 50%,
+		hsl(159deg 33% 57%) 67%,
+		hsl(132deg 43% 75%) 83%,
+		hsl(104deg 100% 95%) 100%
+	);
+}
+
+.wallpaper5 {
+	background-image: linear-gradient(
+		351deg,
+		hsl(223deg 53% 12%) 0%,
+		hsl(228deg 56% 17%) 14%,
+		hsl(233deg 60% 23%) 21%,
+		hsl(237deg 63% 28%) 26%,
+		hsl(242deg 66% 33%) 30%,
+		hsl(247deg 70% 37%) 35%,
+		hsl(252deg 74% 42%) 39%,
+		hsl(256deg 78% 46%) 43%,
+		hsl(261deg 82% 50%) 46%,
+		hsl(266deg 100% 54%) 50%,
+		hsl(266deg 99% 58%) 54%,
+		hsl(267deg 97% 63%) 57%,
+		hsl(267deg 96% 68%) 61%,
+		hsl(268deg 93% 72%) 65%,
+		hsl(268deg 90% 77%) 69%,
+		hsl(269deg 85% 81%) 74%,
+		hsl(269deg 77% 85%) 79%,
+		hsl(270deg 62% 90%) 86%,
+		hsl(270deg 27% 94%) 100%
+	);
+}
+
+.wallpaper6 {
+	background-image: linear-gradient(
+		45deg,
+		hsl(0deg 100% 49%) 0%,
+		hsl(7deg 100% 55%) 17%,
+		hsl(14deg 100% 60%) 25%,
+		hsl(21deg 100% 66%) 30%,
+		hsl(29deg 100% 71%) 33%,
+		hsl(36deg 100% 77%) 35%,
+		hsl(43deg 100% 83%) 37%,
+		hsl(50deg 100% 88%) 38%,
+		hsl(51deg 100% 86%) 39%,
+		hsl(48deg 100% 81%) 39%,
+		hsl(45deg 100% 75%) 40%,
+		hsl(42deg 100% 70%) 41%,
+		hsl(38deg 100% 65%) 41%,
+		hsl(35deg 100% 59%) 42%,
+		hsl(32deg 100% 54%) 43%,
+		hsl(27deg 98% 49%) 45%,
+		hsl(19deg 93% 45%) 47%,
+		hsl(10deg 87% 40%) 49%,
+		hsl(1deg 82% 36%) 53%,
+		hsl(353deg 77% 32%) 58%,
+		hsl(344deg 72% 28%) 65%,
+		hsl(336deg 66% 24%) 76%,
+		hsl(327deg 61% 20%) 100%
+	);
+}

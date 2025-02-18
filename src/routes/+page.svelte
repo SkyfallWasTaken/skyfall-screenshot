@@ -1,4 +1,5 @@
 <script lang="ts">
+import "../wallpapers.css"; // #usetheplatform ;)
 import DesignSettings from "$lib/components/design-settings.svelte";
 import Designer from "$lib/components/designer.svelte";
 import UploadDropzone from "$lib/components/upload-dropzone.svelte";
