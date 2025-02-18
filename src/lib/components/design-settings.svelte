@@ -26,7 +26,7 @@ function onFileSelect(event: Event) {
 />
 
 {#if appState.variant == "imageUploaded"}
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col h-full overflow-auto">
     <div class="p-6 space-y-8">
       <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
@@ -61,6 +61,8 @@ function onFileSelect(event: Event) {
         />
       </div>
 
+      <hr class="border-surface0" />
+
       <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
           <span class="font-semibold">Inner Border Radius</span>
@@ -94,7 +96,7 @@ function onFileSelect(event: Event) {
       </div>
     </div>
 
-    <div class="mt-auto p-6 space-y-2">
+    <div class="mt-auto p-6 space-y-2 border-t border-surface0">
       <Button
         onclick={downloadImage}
         class="bg-mauve hover:bg-mauve/90 text-base w-full py-2 h-fit"

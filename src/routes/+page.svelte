@@ -9,9 +9,9 @@ import { fly } from "svelte/transition";
 </script>
 
 {#if appState.variant == "imageUploaded"}
-  <div in:fly class="w-full h-full">
-    <PaneGroup direction="horizontal">
-      <Pane defaultSize={70}>
+  <div>
+    <PaneGroup direction="horizontal" class="max-h-screen">
+      <Pane defaultSize={70} class="overflow-y-auto">
         <Designer />
       </Pane>
       <PaneResizer class="w-[2px] px-2" />
