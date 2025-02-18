@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { appState, type ImageUploadedState } from "$lib/state.svelte";
-  import Button from "./button.svelte";
-  import Slider from "./slider.svelte";
-  import { wallpaperCount } from "$lib/util";
-  import { downloadImage, copyToClipboard } from "$lib/designer";
+import { appState, type ImageUploadedState } from "$lib/state.svelte";
+import Button from "./button.svelte";
+import Slider from "./slider.svelte";
+import { wallpaperCount } from "$lib/util";
+import { downloadImage, copyToClipboard } from "$lib/designer";
 
-  let fileInput: HTMLInputElement | undefined = $state();
+let fileInput: HTMLInputElement | undefined = $state();
 
-  function onFileSelect(event: Event) {
-    if (appState.variant !== "imageUploaded") return;
-    const target = event.target as HTMLInputElement;
-    if (!target.files?.length) return;
-    const file = target.files[0];
-    appState.wallpaperSelected = URL.createObjectURL(file);
-  }
+function onFileSelect(event: Event) {
+	if (appState.variant !== "imageUploaded") return;
+	const target = event.target as HTMLInputElement;
+	if (!target.files?.length) return;
+	const file = target.files[0];
+	appState.wallpaperSelected = URL.createObjectURL(file);
+}
 </script>
 
 <input

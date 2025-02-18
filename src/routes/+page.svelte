@@ -1,11 +1,11 @@
 <script lang="ts">
-  import "../wallpapers.css"; // #usetheplatform ;)
-  import DesignSettings from "$lib/components/design-settings.svelte";
-  import Designer from "$lib/components/designer.svelte";
-  import UploadDropzone from "$lib/components/upload-dropzone.svelte";
-  import { appState } from "$lib/state.svelte";
-  import { Pane, PaneGroup, PaneResizer } from "paneforge";
-  import { fly } from "svelte/transition";
+import "../wallpapers.css"; // #usetheplatform ;)
+import DesignSettings from "$lib/components/design-settings.svelte";
+import Designer from "$lib/components/designer.svelte";
+import UploadDropzone from "$lib/components/upload-dropzone.svelte";
+import { appState } from "$lib/state.svelte";
+import { Pane, PaneGroup, PaneResizer } from "paneforge";
+import { fly } from "svelte/transition";
 </script>
 
 {#if appState.variant == "imageUploaded"}

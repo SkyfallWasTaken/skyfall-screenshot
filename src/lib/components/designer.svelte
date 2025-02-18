@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { appState } from "$lib/state.svelte";
-  import ArrowLeft from "lucide-svelte/icons/arrow-left";
-  import Button from "./button.svelte";
+import { appState } from "$lib/state.svelte";
+import ArrowLeft from "lucide-svelte/icons/arrow-left";
+import Button from "./button.svelte";
 </script>
 
 {#if appState.variant == "imageUploaded"}
