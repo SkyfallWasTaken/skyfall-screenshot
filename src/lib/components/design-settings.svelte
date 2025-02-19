@@ -61,8 +61,6 @@ function onFileSelect(event: Event) {
         />
       </div>
 
-      <hr class="border-surface0" />
-
       <div class="w-full space-y-3">
         <div class="flex justify-between items-center">
           <span class="font-semibold">Inner Border Radius</span>
@@ -76,6 +74,8 @@ function onFileSelect(event: Event) {
           type="single"
         />
       </div>
+
+      <hr class="border-surface0" />
 
       <div class="w-full space-y-3">
         <span class="font-semibold">Background</span>
